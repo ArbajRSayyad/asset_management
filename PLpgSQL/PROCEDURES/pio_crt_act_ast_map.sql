@@ -17,7 +17,7 @@ begin
 
        if l_ex_act_ast_map_id is null
        then
-            raise exception using errorcode= 'PZ002';
+            raise exception using errcode= 'PZ002';
        else
             if exists
                 (
@@ -45,7 +45,7 @@ begin
                 from account_asset_map;
 
                 insert into account_asset_map(
-                                                act_ast_map_id
+                                                act_ast_map_id,
                                                 account_id,
                                                 business_dt,
                                                 map_from_tmstmp
@@ -60,16 +60,16 @@ begin
 
                 update account_asset_map
                 set map_to_tmstmp = pi_asset_alloc_tab[1].map_from_tmstmp,
-                active_ind = 'N'
+                active_ind = 'N',
                 update_tmstmp = current_timestamp
                 where act_ast_map_id = l_ex_act_ast_map_id;
 
-                po_act_ast_map_id := l_new_act_ast_map_id
+                po_act_ast_map_id := l_new_act_ast_map_id;
 
             else
                 po_act_ast_map_id := null;
             end if;
-       end of;
+       end if;
     exception
     when SQLSTATE 'PZ002'
     then
@@ -78,7 +78,7 @@ begin
         from account_asset_map;
 
         insert into account_asset_map(
-                                      act_ast_map_id
+                                      act_ast_map_id,
                                       account_id,
                                       business_dt,
                                       map_from_tmstmp
@@ -90,6 +90,6 @@ begin
                         pi_asset_alloc_tab[1].business_dt,
                         pi_asset_alloc_tab[1].map_from_tmstmp
                     );
-        po_act_ast_map_id := l_new_act_ast_map_id
+        po_act_ast_map_id := l_new_act_ast_map_id;
 end;
 $$;

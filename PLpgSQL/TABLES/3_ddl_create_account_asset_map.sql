@@ -2,8 +2,8 @@
 -- It store's mapping between customer account and assets the account hold.
 CREATE TABLE ACCOUNT_ASSET_MAP
 (
-    ACCT_AST_MAP_ID bigint,
-    ACCOUNT_ID bigint,
+    ACCT_AST_MAP_ID integer,
+    ACCOUNT_ID integer,
     BUSINESS_DT DATE NOT NULL,
     ACTIVE_IND character(1) DEFAULT 'Y',
     MAP_FROM_TMSTMP TIMESTAMP NOT NULL,
@@ -14,4 +14,3 @@ CREATE TABLE ACCOUNT_ASSET_MAP
     CONSTRAINT ACCOUNT_FK FOREIGN KEY (ACCOUNT_ID) REFERENCES ACCOUNTS(ACCOUNT_ID),
     CONSTRAINT ACCT_AST_MAP_CK CHECK (ACTIVE_IND IN ('Y','N'))
 );
-/

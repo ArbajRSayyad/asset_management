@@ -18,4 +18,4 @@ begin
                l_assets
         from accounts as acct;
 end;
-$$
+$$;
