@@ -1,6 +1,6 @@
 # Asset Management Database Module
-This repository contains the database tables, insert scripts, type, stored procedure and database function for the **Asset Management System**. 
-The system tracks day-to-day asset holding information across various customer accounts. Because underlying asset positions flux continuously throughout the day, the module is engineered to handle both high-velocity streaming ingestion and heavy end-of-day batch reconciliation.
+This repository contains the DB codebase for the **Asset Management System**. 
+The asset management system tracks day-to-day asset holding information across various customer accounts. Because underlying asset positions flux continuously throughout the day, the module is engineered to handle both high-velocity streaming ingestion and heavy end-of-day batch reconciliation.
 
 ## 🚀 Dual-Engine Repository (Oracle & PostgreSQL)
 ⚠️ **Major Highlight:** This repository hosts database code for both **Oracle** and **PostgreSQL**. The legacy Oracle codebase is systematically migrated to PostgreSQL. The repository is structured into two primary directories to separate these dialects:
