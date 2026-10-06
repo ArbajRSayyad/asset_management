@@ -10,10 +10,13 @@ The asset management system tracks day-to-day asset holding information across v
 ## 🏗️ System Architecture & Data Flow
 The database module is powered by an upstream Java microservice that ingests payloads from a **Kafka stream**. The microservice maps incoming stream messages directly into user-defined object/composite types before passing them down to this layer.
 The architecture services two distinct data-loading patterns:
+
 [ Kafka Stream ] ──> [ Java Microservice ] ──> [DB Object Format ]
+
 ┌───────────────────────────┴───────────────────────────┐
 ▼                                                       ▼
 【 1. Real-Time Ingest 】                                【 2. End-of-Day Batch 】
+
 Near real-time asset updates via stream.                Autosys triggered mass-load/reconciliation.
 ### 1. Real-Time Use Case
 * Captures real-time asset fluctuations as they occur throughout the day.
