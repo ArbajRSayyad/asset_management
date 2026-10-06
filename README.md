@@ -12,9 +12,9 @@ The database module is powered by an upstream Java microservice that ingests pay
 The architecture services two distinct data-loading patterns:
 
 [ Kafka Stream ] ──> [ Java Microservice ] ──> [DB Object Format ]
-
-┌───────────────────────────┴───────────────────────────┐
-【 1. Real-Time Ingest 】                                      【 2. End-of-Day Batch 】
+                              |
+-------------------------------------------------------------------------------
+【 1. Real-Time Ingest 】                                                  【 2. End-of-Day Batch 】
 
 Near real-time asset updates via stream.                Autosys triggered mass-load/reconciliation.
 ### 1. Real-Time Use Case
