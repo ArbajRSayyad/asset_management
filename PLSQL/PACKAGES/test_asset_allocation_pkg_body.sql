@@ -1,6 +1,6 @@
 create or replace package body test_asset_allocation_pkg
 as
-    create or replace function f_build_asset_allocation_obj
+    function f_build_asset_allocation_obj
     return asset_alloc_tab
     as
         l_asset_tab asset_tab := asset_tab();
@@ -21,7 +21,7 @@ as
         return l_asset_alloc_tab;
     end f_build_asset_allocation_obj;
 
-    create or replace procedure p_test_asset_allocation
+    procedure p_test_asset_allocation
     as
       l_asset_alloc_tab asset_alloc_tab := asset_alloc_tab();
     begin
