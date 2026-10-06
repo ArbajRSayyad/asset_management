@@ -15,7 +15,8 @@ The architecture services two distinct data-loading patterns:
 
 ┌───────────────────────────┴───────────────────────────┐
 ▼                                                       ▼
-【 1. Real-Time Ingest 】                                【 2. End-of-Day Batch 】
+
+【 1. Real-Time Ingest 】                       【 2. End-of-Day Batch 】
 
 Near real-time asset updates via stream.                Autosys triggered mass-load/reconciliation.
 ### 1. Real-Time Use Case
