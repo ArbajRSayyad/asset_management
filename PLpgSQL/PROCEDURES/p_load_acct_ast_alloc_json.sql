@@ -11,7 +11,7 @@ begin
 		json_agg(jsonb_build_object('asset_id', aa.asset_id,
 										'usd_price', ast.usd_price,
 									 	'description', ast.description)
-						)
+						) as assets_list
 		from accounts act
 		left join account_asset_map aam
 		on act.account_id = aam.account_id
